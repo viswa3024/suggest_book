@@ -1,0 +1,388 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "author",
+              "elicitationRequired": true,
+              "type": "AUTHORLIST",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1549818592197.1339559440972"
+              }
+            }
+          ],
+          "name": "SuggestBookIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "author",
+              "type": "AUTHORLIST"
+            }
+          ],
+          "name": "SuggestBookIntent",
+          "samples": [
+            "sugget book by {author} language genre"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": " Eckhart Tolle"
+              }
+            },
+            {
+              "name": {
+                "value": "William Strunk Jr."
+              }
+            },
+            {
+              "name": {
+                "value": " Irma S. Rombauer"
+              }
+            },
+            {
+              "name": {
+                "value": " M. Scott Peck"
+              }
+            },
+            {
+              "name": {
+                "value": " Markus Zusak"
+              }
+            },
+            {
+              "name": {
+                "value": "Donna Tartt"
+              }
+            },
+            {
+              "name": {
+                "value": "Alice Walker"
+              }
+            },
+            {
+              "name": {
+                "value": "Robert Ludlum"
+              }
+            },
+            {
+              "name": {
+                "value": "James Dashner"
+              }
+            },
+            {
+              "name": {
+                "value": "Kathryn Stockett"
+              }
+            },
+            {
+              "name": {
+                "value": "Paula Hawkins"
+              }
+            },
+            {
+              "name": {
+                "value": "Khaled Hosseini"
+              }
+            },
+            {
+              "name": {
+                "value": "John Green"
+              }
+            },
+            {
+              "name": {
+                "value": "Andy Weir"
+              }
+            },
+            {
+              "name": {
+                "value": "Lois Lowry"
+              }
+            },
+            {
+              "name": {
+                "value": "Margaret Atwood"
+              }
+            },
+            {
+              "name": {
+                "value": "William Goldman"
+              }
+            },
+            {
+              "name": {
+                "value": "Stieg Larsson"
+              }
+            },
+            {
+              "name": {
+                "value": "Sun Tzu"
+              }
+            },
+            {
+              "name": {
+                "value": "Thomas Harris"
+              }
+            },
+            {
+              "name": {
+                "value": "Douglas Adams"
+              }
+            },
+            {
+              "name": {
+                "value": "Rudyard Kipling"
+              }
+            },
+            {
+              "name": {
+                "value": "Anne Frank"
+              }
+            },
+            {
+              "name": {
+                "value": "Antoine de Saint-Exupéry"
+              }
+            },
+            {
+              "name": {
+                "value": "Kenneth Grahame"
+              }
+            },
+            {
+              "name": {
+                "value": "S.E. Hinton"
+              }
+            },
+            {
+              "name": {
+                "value": "Bram Stoker"
+              }
+            },
+            {
+              "name": {
+                "value": "H.G. Wells"
+              }
+            },
+            {
+              "name": {
+                "value": "Franz Kafka"
+              }
+            },
+            {
+              "name": {
+                "value": "Ernest Hemingway"
+              }
+            },
+            {
+              "name": {
+                "value": "C.S. Lewis"
+              }
+            },
+            {
+              "name": {
+                "value": "Albert Camus"
+              }
+            },
+            {
+              "name": {
+                "value": "Alexandre Dumas"
+              }
+            },
+            {
+              "name": {
+                "value": "Nathaniel Hawthorne"
+              }
+            },
+            {
+              "name": {
+                "value": "Leo Tolstoy"
+              }
+            },
+            {
+              "name": {
+                "value": "Dante Alighieri"
+              }
+            },
+            {
+              "name": {
+                "value": "Arthur Conan Doyle"
+              }
+            },
+            {
+              "name": {
+                "value": "Emily Brontë"
+              }
+            },
+            {
+              "name": {
+                "value": "Charles Dickens"
+              }
+            },
+            {
+              "name": {
+                "value": "Fyodor Dostoevsky"
+              }
+            },
+            {
+              "name": {
+                "value": "Oscar Wilde"
+              }
+            },
+            {
+              "name": {
+                "value": "Homer"
+              }
+            },
+            {
+              "name": {
+                "value": "Mary Shelley"
+              }
+            },
+            {
+              "name": {
+                "value": "Herman Melville"
+              }
+            },
+            {
+              "name": {
+                "value": "Margaret Mitchell"
+              }
+            },
+            {
+              "name": {
+                "value": "Cormac McCarthy"
+              }
+            },
+            {
+              "name": {
+                "value": "Suzanne Collins"
+              }
+            },
+            {
+              "name": {
+                "value": "Stephen King"
+              }
+            },
+            {
+              "name": {
+                "value": "John Steinbeck"
+              }
+            },
+            {
+              "name": {
+                "value": "Dan Brown"
+              }
+            },
+            {
+              "name": {
+                "value": "Virginia Woolf"
+              }
+            },
+            {
+              "name": {
+                "value": "J.K. Rowling"
+              }
+            },
+            {
+              "name": {
+                "value": "Paulo Coelho"
+              }
+            },
+            {
+              "name": {
+                "value": "Jane Austen"
+              }
+            },
+            {
+              "name": {
+                "value": "J.R.R. Tolkien"
+              }
+            },
+            {
+              "name": {
+                "value": "Gabriel Garcia Marquez"
+              }
+            },
+            {
+              "name": {
+                "value": "J.D. Salinger"
+              }
+            },
+            {
+              "name": {
+                "value": "Aldous Huxley"
+              }
+            },
+            {
+              "name": {
+                "value": "F. Scott Fitzgerald"
+              }
+            },
+            {
+              "name": {
+                "value": "George Orwell"
+              }
+            },
+            {
+              "name": {
+                "value": "Harper Lee"
+              }
+            }
+          ],
+          "name": "AUTHORLIST"
+        }
+      ],
+      "invocationName": "suggest book"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Enter your preferred author"
+          }
+        ],
+        "id": "Elicit.Slot.1549818592197.1339559440972"
+      }
+    ]
+  }
+}
