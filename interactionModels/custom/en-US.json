@@ -12,6 +12,20 @@
               "prompts": {
                 "elicitation": "Elicit.Slot.1549818592197.1339559440972"
               }
+            },
+            {
+              "name": "language",
+              "elicitationRequired": false,
+              "type": "AMAZON.Language",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "genre",
+              "elicitationRequired": false,
+              "type": "GENRELIST",
+              "confirmationRequired": false,
+              "prompts": {}
             }
           ],
           "name": "SuggestBookIntent",
@@ -47,15 +61,23 @@
           "slots": [
             {
               "multipleValues": {
-                "enabled": true
+                "enabled": false
               },
               "name": "author",
               "type": "AUTHORLIST"
+            },
+            {
+              "name": "language",
+              "type": "AMAZON.Language"
+            },
+            {
+              "name": "genre",
+              "type": "GENRELIST"
             }
           ],
           "name": "SuggestBookIntent",
           "samples": [
-            "sugget book by {author} language genre"
+            "sugget book by {author} {language} {genre}"
           ]
         }
       ],
@@ -369,6 +391,166 @@
             }
           ],
           "name": "AUTHORLIST"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Spirituality"
+              }
+            },
+            {
+              "name": {
+                "value": "Psychology"
+              }
+            },
+            {
+              "name": {
+                "value": "Writing"
+              }
+            },
+            {
+              "name": {
+                "value": "Cooking (Cookbook)"
+              }
+            },
+            {
+              "name": {
+                "value": "Military"
+              }
+            },
+            {
+              "name": {
+                "value": "Biography"
+              }
+            },
+            {
+              "name": {
+                "value": "Children\u0027s Literature"
+              }
+            },
+            {
+              "name": {
+                "value": "Young Adult"
+              }
+            },
+            {
+              "name": {
+                "value": "Surrealism"
+              }
+            },
+            {
+              "name": {
+                "value": "Novella"
+              }
+            },
+            {
+              "name": {
+                "value": "Romanticism"
+              }
+            },
+            {
+              "name": {
+                "value": "Philosophical"
+              }
+            },
+            {
+              "name": {
+                "value": "Existentialism"
+              }
+            },
+            {
+              "name": {
+                "value": "Realist"
+              }
+            },
+            {
+              "name": {
+                "value": "Allegory"
+              }
+            },
+            {
+              "name": {
+                "value": "Detective"
+              }
+            },
+            {
+              "name": {
+                "value": "Psychological Fiction"
+              }
+            },
+            {
+              "name": {
+                "value": "Adventure"
+              }
+            },
+            {
+              "name": {
+                "value": "Historical Fiction"
+              }
+            },
+            {
+              "name": {
+                "value": "Post-Apocalyptic"
+              }
+            },
+            {
+              "name": {
+                "value": "Science Fiction"
+              }
+            },
+            {
+              "name": {
+                "value": "Horror"
+              }
+            },
+            {
+              "name": {
+                "value": "Thriller"
+              }
+            },
+            {
+              "name": {
+                "value": "Satire"
+              }
+            },
+            {
+              "name": {
+                "value": "Modernist"
+              }
+            },
+            {
+              "name": {
+                "value": "Romance"
+              }
+            },
+            {
+              "name": {
+                "value": "Fantasy"
+              }
+            },
+            {
+              "name": {
+                "value": "Magic Realism"
+              }
+            },
+            {
+              "name": {
+                "value": "Classic"
+              }
+            },
+            {
+              "name": {
+                "value": "Dystopian"
+              }
+            },
+            {
+              "name": {
+                "value": "Fiction"
+              }
+            }
+          ],
+          "name": "GENRELIST"
         }
       ],
       "invocationName": "suggest book"

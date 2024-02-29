@@ -17,6 +17,7 @@ from ask_sdk_model import Response
 import pandas as pd
 import requests
 import io
+import random
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -54,9 +55,9 @@ class SuggestBookIntentHandler(AbstractRequestHandler):
         for _, row in df.iterrows():
             book = {
                 'Title': row['Title'],
-                'Author': row['Author'],
-                'Language': row['Language'],
-                'Genre': row['Genre']
+                'Author': row['Author'].lower(),
+                'Language': row['Language'].lower(),
+                'Genre': row['Genre'].lower()
             }
             books.append(book)
         return books
@@ -71,13 +72,28 @@ class SuggestBookIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         slots = handler_input.request_envelope.request.intent.slots
-        author = slots["author"].value
-        language = slots["language"].value
-        genre = slots["genre"].value
+        
+        if slots["author"].value:
+            author = slots["author"].value.lower()
+        else:
+            author = None
+        if slots["language"].value:
+            language = slots["language"].value.lower()
+        else:
+            language = None
+        if slots["genre"].value:
+            genre = slots["genre"].value.lower()
+        else:
+            genre = None
+        
         user_preferences = {}
-        user_preferences["Author"] = author
-        user_preferences["Language"] = language
-        user_preferences["Genre"] = genre
+        if author and author != 'author':
+            user_preferences["Author"] = author
+        if language and language != 'language':
+            user_preferences["Language"] = language
+        if genre and genre != 'genre':
+            user_preferences["Genre"] = genre
+            
 
         url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7Qv4QiZGx7qYlzwHWNObUZGppcht-SdETM1UgISaetm0Y0ziEDjMDGHPz_kpYA/pub?gid=353356446&single=true&output=csv"
         csv_content = requests.get(url).content
@@ -86,7 +102,8 @@ class SuggestBookIntentHandler(AbstractRequestHandler):
         recommended_book = self.recommend_book(user_preferences,books_list)
 
         if isinstance(recommended_book, dict):
-            speak_output = f"Recommended Book: {recommended_book['Title']} by {recommended_book['Author']}"
+            author_name = recommended_book['Author'].title()
+            speak_output = f"Recommended Book: {recommended_book['Title']} by {author_name}"
         else:
             speak_output = "author is  {author}, language is {language}, genre is {genre}".format(author=author,language=language,genre=genre)
 
