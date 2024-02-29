@@ -100,6 +100,7 @@ class SuggestBookIntentHandler(AbstractRequestHandler):
         df = pd.read_csv(io.StringIO(csv_content.decode('utf-8')))
         books_list = self.get_books_list(df)
         recommended_book = self.recommend_book(user_preferences,books_list)
+        
 
         if isinstance(recommended_book, dict):
             author_name = recommended_book['Author'].title()
