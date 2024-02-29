@@ -105,7 +105,7 @@ class SuggestBookIntentHandler(AbstractRequestHandler):
             author_name = recommended_book['Author'].title()
             speak_output = f"Recommended Book: {recommended_book['Title']} by {author_name}"
         else:
-            speak_output = "author is  {author}, language is {language}, genre is {genre}".format(author=author,language=language,genre=genre)
+            speak_output = "author is  {author}, language is {language}, genre is {genre}, No matching books found.".format(author=author,language=language,genre=genre)
 
         return (
             handler_input.response_builder
